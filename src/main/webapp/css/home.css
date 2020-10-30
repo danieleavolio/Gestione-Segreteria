@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+div h1{
+    color:darkred;
+    font-weight: bold;
+}
+
+body > h3{
+    color:orangered;
+}
+
+figcaption > h3{
+    color: greenyellow;
+}
+
+.jumbotron{
+    background-color:sandybrown;
+}
+
+article+article{
+    text-decoration: underline;
+}
+#p1{
+    text-decoration: underline;
+}
+
+article{
+    left: 100px;
+    font-family: "Arial", serif;
+    font-size: 20px;
+}
+
+p.specifico{
+    text-decoration: line-through;
+}
+
+
