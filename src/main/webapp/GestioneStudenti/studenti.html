@@ -5,20 +5,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/studenti.js"></script>
+
     <meta charset="UTF-8">
     <title>Elenco studenti</title>
 </head>
 <body>
 <h2>Elenco Studenti</h2>
-<table class="table table-bordered table-hover table-dark table-sm table-responsive">
-    <thead>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover table-sm" id="tabellaStud">
+        <thead>
         <tr>
             <th>Matricola</th>
             <th>Nome</th>
             <th>Cognome</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         <tr>
             <td>201018</td>
             <td>Daniele</td>
@@ -29,8 +32,28 @@
             <td>Simone</td>
             <td>Bilotta</td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+
+<form method="get" action="" >
+    <div class="form-group">
+        <label for="matricola">Matricola:</label>
+        <input type="text" class="form-control" placeholder="Inserisci matricola" id="matricola">
+    </div>
+    <div class="form-group">
+        <label for="Nome"> Nome: </label>
+        <input type="text" class="form-control" placeholder="Inserisci nome" id="nome"/>
+    </div>
+    <div class="form-group">
+        <label> Cognome:</label>
+        <input type="text" class="form-control" placeholder="Inserisci cognome" id="cognome"/>
+    </div>
+</form>
+<div>
+    <button id="idIscrivi" onclick=iscriviStudente()>Iscrivi</button>
+    <button id=sort" onclick=sortStudents()> Riordina</button>
+</div>
 
 </body>
 </html>
