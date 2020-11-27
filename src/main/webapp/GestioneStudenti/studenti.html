@@ -13,33 +13,20 @@
 <body>
 <h2>Elenco Studenti</h2>
 <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover table-sm" id="tabellaStud">
-        <thead>
+    <table class="table table-bordered table-hover" id="tabellaStud">
+        <thead class="thead-dark">
         <tr>
             <th>Matricola</th>
             <th>Nome</th>
             <th>Cognome</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>201018</td>
-            <td>Daniele</td>
-            <td>Avolio</td>
-        </tr>
-        <tr>
-            <td>201917</td>
-            <td>Simone</td>
-            <td>Bilotta</td>
-        </tr>
-        </tbody>
+            <th>Email</th>
     </table>
 </div>
 
 <form method="get" action="" >
     <div class="form-group">
         <label for="matricola">Matricola:</label>
-        <input type="text" class="form-control" placeholder="Inserisci matricola" id="matricola">
+        <input type="number" class="form-control" placeholder="Inserisci matricola" id="matricola">
     </div>
     <div class="form-group">
         <label for="Nome"> Nome: </label>
@@ -49,10 +36,14 @@
         <label> Cognome:</label>
         <input type="text" class="form-control" placeholder="Inserisci cognome" id="cognome"/>
     </div>
+    <div class="form-group">
+        <label> Email:</label>
+        <input type="email" class="form-control" placeholder="Inserisci l'email" id="email"/>
+    </div>
 </form>
 <div>
-    <button id="idIscrivi" onclick=iscriviStudente()>Iscrivi</button>
-    <button id=sort" onclick=sortStudents()> Riordina</button>
+    <button id="idIscrivi" type="button" class="btn btn-primary">Iscrivi</button>
+    <button id="sort" type="button" class="btn btn-warning">Ri-ordina</button>
 </div>
 
 </body>
