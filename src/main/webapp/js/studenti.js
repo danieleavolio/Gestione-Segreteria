@@ -1,4 +1,4 @@
-window.addEventListener("load",function (){
+window.addEventListener("load", function () {
     inizializza()
     registraEventi()
 });
@@ -11,18 +11,22 @@ function Studente(matricola, nome, cognome, email) {
     this.email = email;
 }
 
-function inizializza(){
-var studente1 = new Studente(201018, "Daniele", "Avolio", "daniele.avolio@gmail.com");
-tuttiStudenti.push(studente1);
-var studente2 = new Studente(201912, "Alex","Fazio", "alex.fazio@jetbrains.com");
-tuttiStudenti.push(studente2);
-var studente3 = new Studente(201917,"Simone","Bilotta","simonebilotta.curingone@gmail.com");
-tuttiStudenti.push(studente3);
-var studente4 = new Studente(201922,  "Domenico Nicodemo", "Panetta","ddannidoro@gmail.com");
-tuttiStudenti.push(studente4);
-popolaTabella();
+function inizializza() {
+    var studente1 = new Studente(201018, "Daniele", "Avolio", "daniele.avolio@gmail.com");
+    aggiungiStudente(studente1);
+    tuttiStudenti.push(studente1);
+    var studente2 = new Studente(201912, "Alex", "Fazio", "alex.fazio@jetbrains.com");
+    aggiungiStudente(studente2)
+    tuttiStudenti.push(studente2);
+    var studente3 = new Studente(201917, "Simone", "Bilotta", "simonebilotta.curingone@gmail.com");
+    aggiungiStudente(studente3);
+    tuttiStudenti.push(studente3);
+    var studente4 = new Studente(201922, "Domenico Nicodemo", "Panetta", "ddannidoro@gmail.com");
+    aggiungiStudente(studente4);
+    tuttiStudenti.push(studente4);
 
 }
+
 //Genera lo studente e lo manda ad aggiungiStudente
 function registraStudente() {
     var matricola = document.querySelector("#matricola").value;
@@ -34,22 +38,19 @@ function registraStudente() {
     aggiungiStudente(studente);
 }
 
-function popolaTabella(){
-    tuttiStudenti.forEach(function(stud,index){
-      aggiungiStudente(stud);
-    })
-}
-
-
 function registraEventi() {
     var bottoneIscrivi = document.getElementById("idIscrivi");
     bottoneIscrivi.addEventListener("click", registraStudente);
-
     var bottoneRiordina = document.getElementById("sort");
     bottoneRiordina.addEventListener("click", sortStudents);
 }
+
 //Si prende lo studente e poi lo aggiunge
 function aggiungiStudente(studente) {
+    if (isInside(studente)) {
+        alert("Studente già inserito. Impossibile aggiungere")
+        return;
+    }
     tuttiStudenti.push(studente);
 
     var table = document.querySelector(".table");
@@ -92,4 +93,14 @@ function sortStudents() {
             riordinando = true;
         }
     }
+}
+
+function isInside(studente) {
+    for (let i = 0; i < tuttiStudenti.length; i++) {
+        if (tuttiStudenti[i].matricola == studente.matricola) {
+            return true;
+        }
+    }
+
+    return false;
 }
