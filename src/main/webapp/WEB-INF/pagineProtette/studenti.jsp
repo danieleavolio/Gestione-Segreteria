@@ -5,7 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="../js/studenti.js"></script>
+    <script src="../../js/studenti.js"></script>
 
     <meta charset="UTF-8">
     <title>Elenco studenti</title>
@@ -26,23 +26,23 @@
 <form method="get" action="" >
     <div class="form-group">
         <label for="matricola">Matricola:</label>
-        <input type="number" class="form-control" placeholder="Inserisci matricola" id="matricola">
+        <input type="number" class="form-control" placeholder="Inserisci matricola" id="matricola" name="matricola">
     </div>
     <div class="form-group">
         <label for="Nome"> Nome: </label>
-        <input type="text" class="form-control" placeholder="Inserisci nome" id="nome"/>
+        <input type="text" class="form-control" placeholder="Inserisci nome" id="nome" name="nome"/>
     </div>
     <div class="form-group">
         <label> Cognome:</label>
-        <input type="text" class="form-control" placeholder="Inserisci cognome" id="cognome"/>
+        <input type="text" class="form-control" placeholder="Inserisci cognome" id="cognome" name="cognome"/>
     </div>
     <div class="form-group">
         <label> Email:</label>
-        <input type="email" class="form-control" placeholder="Inserisci l'email" id="email"/>
+        <input type="email" class="form-control" placeholder="Inserisci l'email" id="email" name="email"/>
     </div>
 </form>
 <div>
-    <button id="idIscrivi" type="button" class="btn btn-primary">Iscrivi</button>
+    <button id="idIscrivi" type="button" class="btn btn-primary" >Iscrivi</button>
     <button id="sort" type="button" class="btn btn-warning">Ri-ordina</button>
 </div>
 
