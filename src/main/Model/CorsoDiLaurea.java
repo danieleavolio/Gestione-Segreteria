@@ -25,4 +25,11 @@ public class CorsoDiLaurea {
         this.nome = nome;
     }
 
+    public ArrayList<Studente> getStudenti() {
+        return studenti;
+    }
+
+    public void setStudenti(ArrayList<Studente> studenti) {
+        this.studenti = studenti;
+    }
 }

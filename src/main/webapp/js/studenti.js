@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-    inizializza()
+    //inizializza()
     registraEventi()
 });
 var tuttiStudenti = new Array();

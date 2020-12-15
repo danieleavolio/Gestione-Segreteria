@@ -1,10 +1,14 @@
 package main.persistence;
 
+import main.Model.CorsoDiLaurea;
 import main.Model.Studente;
+import main.persistence.dao.CorsoDiLaureaDAO;
 import main.persistence.dao.StudenteDAO;
+import main.persistence.dao.jdbc.CorsoDiLaureaDAOJDBC;
 import main.persistence.dao.jdbc.StudenteDAOJDBC;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class DBManager {
     private static DBManager instance = null;
@@ -20,6 +24,7 @@ public class DBManager {
             e.printStackTrace();
         }
     }
+
 
     public static DBManager getInstance() {
         if (instance == null) {
@@ -39,4 +44,6 @@ public class DBManager {
     public StudenteDAO studenteDAO() {
         return new StudenteDAOJDBC(dataSource);
     }
+
+    public CorsoDiLaureaDAO corsoDiLaureaDAO () { return new CorsoDiLaureaDAOJDBC(dataSource); }
 }

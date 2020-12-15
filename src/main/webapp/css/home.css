@@ -18,17 +18,11 @@ body > h3{
     background-color:sandybrown;
 }
 
-article+article{
-    text-decoration: line-through;
-}
 
-article+article{
-    text-decoration: underline;
-}
 
-p.specifico{
-    text-decoration: line-through;
-}
+
+
+
 
 .jumbotron{
     box-shadow: 5px 5px #f3671e;
