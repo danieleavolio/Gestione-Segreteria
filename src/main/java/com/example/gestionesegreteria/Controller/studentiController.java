@@ -50,12 +50,12 @@ public class studentiController {
     }
 
     @PostMapping("/GestioneStudenti/faiIscrizione")
-    public String iscrivi(@RequestParam String matricola, @RequestParam String nome, @RequestParam String cognome, @RequestParam String luogoNascita, @RequestParam String dataNascita) {
+    public String iscrivi(@RequestParam String matricola, @RequestParam String nome, @RequestParam String cognome, @RequestParam String dataNascita, @RequestParam String scuola) {
         System.out.println(matricola);
         System.out.println(nome);
         System.out.println(cognome);
-        System.out.println(luogoNascita);
         System.out.println(dataNascita);
+        System.out.println(scuola);
         return "studenti";
     }
 }

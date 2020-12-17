@@ -4,15 +4,16 @@ window.addEventListener("load", function () {
 });
 var tuttiStudenti = new Array();
 
-function Studente(matricola, nome, cognome, email) {
+function Studente(matricola, nome, cognome, dataNascita, scuola) {
     this.matricola = matricola;
-    this.cognome = cognome;
     this.nome = nome;
-    this.email = email;
+    this.cognome = cognome;
+    this.dataNascita = dataNascita;
+    this.scuola = scuola;
 }
 
 function inizializza() {
-    var studente1 = new Studente(201018, "Daniele", "Avolio", "daniele.avolio@gmail.com");
+    var studente1 = new Studente(201018, "Daniele", "Avolio", "14/10/");
     aggiungiStudente(studente1);
     tuttiStudenti.push(studente1);
     var studente2 = new Studente(201912, "Alex", "Fazio", "alex.fazio@jetbrains.com");
@@ -37,16 +38,16 @@ function registraStudente() {
     var d = document.querySelector("#dataNascita").value;
     var scuola = document.querySelector("#idScuola").value;
 
+    var studente = new Studente(matr, nom, cogn, d, scuola);
     $.ajax({
         url: "iscriviStudente",
         method: "POST",
         data: {matr: matr, nome: nom, cognome: cogn, date: d, scuolaId: scuola},
         success: function (response){ //se la mia chiamata restituisce un codice 200m ( tutto ok ) chiama la funzione giu
-            if (response === "SUCCESS"){
-                var studente = new Studente(matr, nom, cogn, d, scuola);
+            console.log(response);
+            if (response === "Success"){
                 aggiungiStudente(studente);
             }
-            alert(response);
         },
         fail: function (jqHXR, textStatus){
             alert ("Request failed: " + textStatus);
@@ -65,6 +66,8 @@ function registraEventi() {
 
 //Si prende lo studente e poi lo aggiunge
 function aggiungiStudente(studente) {
+
+    console.log("ARRIVATO");
     if (isInside(studente)) {
         alert("Studente già inserito. Impossibile aggiungere")
         return;
@@ -76,12 +79,14 @@ function aggiungiStudente(studente) {
     var matricola = row.insertCell(0);
     var nome = row.insertCell(1);
     var cognome = row.insertCell(2);
-    var email = row.insertCell(3);
+    var dataNascita = row.insertCell(3);
+    var scuola = row.insertCell(4);
 
     nome.textContent = studente.nome;
     cognome.textContent = studente.cognome;
     matricola.textContent = studente.matricola;
-    email.textContent = studente.email;
+    dataNascita.textContent = studente.dataNascita;
+    scuola.textContent = studente.scuola;
 }
 
 function sortStudents() {

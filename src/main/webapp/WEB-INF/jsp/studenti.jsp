@@ -33,7 +33,6 @@
             <c:forEach var="stud" items="${listStudenti}">
                 <tr class="table">
                     <!--<td><input type="checkbox" id = "${stud.matricola}" name ="${stud.matricola}" value="${stud.matricola}"></td> -->
-
                     <td> ${stud.matricola}</td>
                     <td> ${stud.nome}</td>
                     <td> ${stud.cognome}</td>
