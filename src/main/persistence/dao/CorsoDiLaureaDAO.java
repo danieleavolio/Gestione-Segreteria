@@ -3,6 +3,7 @@ package main.persistence.dao;
 import main.Model.CorsoDiLaurea;
 import main.Model.Studente;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CorsoDiLaureaDAO {
@@ -11,4 +12,6 @@ public interface CorsoDiLaureaDAO {
     public List<CorsoDiLaurea> findAll();
     public void update(CorsoDiLaureaDAO cdl); //Update
     public void delete(CorsoDiLaureaDAO cdl); //Delete
+
+    ArrayList<Studente> findByCorsoDiLaureaID(int id);
 }

@@ -29,13 +29,31 @@ function inizializza() {
 
 //Genera lo studente e lo manda ad aggiungiStudente
 function registraStudente() {
-    var matricola = document.querySelector("#matricola").value;
-    var nome = document.querySelector("#nome").value;
-    var cognome = document.querySelector("#cognome").value;
-    var email = document.querySelector("#email").value;
 
-    var studente = new Studente(matricola, nome, cognome, email);
-    aggiungiStudente(studente);
+
+    var matr = document.querySelector("#matricola").value;
+    var nom = document.querySelector("#nome").value;
+    var cogn = document.querySelector("#cognome").value;
+    var d = document.querySelector("#dataNascita").value;
+    var scuola = document.querySelector("#idScuola").value;
+
+    $.ajax({
+        url: "iscriviStudente",
+        method: "POST",
+        data: {matr: matr, nome: nom, cognome: cogn, date: d, scuolaId: scuola},
+        success: function (response){ //se la mia chiamata restituisce un codice 200m ( tutto ok ) chiama la funzione giu
+            if (response === "SUCCESS"){
+                var studente = new Studente(matr, nom, cogn, d, scuola);
+                aggiungiStudente(studente);
+            }
+            alert(response);
+        },
+        fail: function (jqHXR, textStatus){
+            alert ("Request failed: " + textStatus);
+        }
+    });
+
+
 }
 
 function registraEventi() {

@@ -3,8 +3,10 @@ package main.persistence;
 import main.Model.CorsoDiLaurea;
 import main.Model.Studente;
 import main.persistence.dao.CorsoDiLaureaDAO;
+import main.persistence.dao.ScuolaDAO;
 import main.persistence.dao.StudenteDAO;
 import main.persistence.dao.jdbc.CorsoDiLaureaDAOJDBC;
+import main.persistence.dao.jdbc.ScuolaDAOJDBC;
 import main.persistence.dao.jdbc.StudenteDAOJDBC;
 
 import java.util.List;
@@ -46,4 +48,9 @@ public class DBManager {
     }
 
     public CorsoDiLaureaDAO corsoDiLaureaDAO () { return new CorsoDiLaureaDAOJDBC(dataSource); }
+
+    public ScuolaDAO scuolaDAO() {
+        return new ScuolaDAOJDBC(dataSource);
+    }
+
 }

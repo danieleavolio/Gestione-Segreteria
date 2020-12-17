@@ -23,6 +23,9 @@
                 <th>Matricola</th>
                 <th>Nome</th>
                 <th>Cognome</th>
+                <th>Data di Nascita</th>
+                <th>Scuola di Diploma</th>
+
                <!-- <th>Email</th> -->
             </tr>
         </thead>
@@ -34,12 +37,14 @@
                     <td> ${stud.matricola}</td>
                     <td> ${stud.nome}</td>
                     <td> ${stud.cognome}</td>
+                    <td> ${stud.dataNascita}</td>
+                    <td> ${stud.scuola.id}</td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
 </div>
-<!--
+
 <form method="get" action="">
     <div class="form-group">
         <label for="matricola">Matricola:</label>
@@ -54,14 +59,16 @@
         <input type="text" class="form-control" placeholder="Inserisci cognome" id="cognome" name="cognome"/>
     </div>
     <div class="form-group">
-        <label> Email:</label>
-        <input type="email" class="form-control" placeholder="Inserisci l'email" id="email" name="email"/>
+        <label> Data di Nascita:</label>
+        <input type="date" class="form-control" placeholder="Inserisci data di nascita" id="dataNascita" name="dataNascita"/>
+    </div>
+    <div class="form-group">
+        <label>Scuola:</label>
+        <input type="text" class="form-control" placeholder="Inserisci la scuola" id="idScuola" name="idScuola"/>
     </div>
 </form>
 <div>
     <button id="idIscrivi" type="button" class="btn btn-primary">Iscrivi</button>
-    -->
-<div>
     <button id="sort" type="button" class="btn btn-warning">Ri-ordina</button>
 </div>
 
